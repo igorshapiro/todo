@@ -1,6 +1,6 @@
 class window.TodoItemsController
   constructor: ($scope, TodoItem) ->
-    $scope.reload = -> $scope.todos = TodoItem.query()
+    $scope.reload = -> TodoItem.query({}, (data) -> $scope.todos = data)
     $scope.reload()
 
     $scope.moveDown = (todo) -> todo.$moveDown({id: todo.id}, -> $scope.reload())

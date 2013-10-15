@@ -4,7 +4,8 @@
     <a href="#" eat-click ng-click="moveUp(todo)"><i class="icon-sort-up"></i></a>
 
     <a href="#" eat-click ng-click="toggleDone(todo)"><i ng-class="{'icon-check-empty': todo.done_at == null, 'icon-check': todo.done_at != null}"></i></a>
-    {{todo.title}} (due date: {{todo.due_at}})
+    {{todo.title}} 
+    <span ng-if="todo.due_at">(due date: {{todo.due_at | date}})</span>
     <a href="#" eat-click ng-click="moveDown(todo)"><i class="icon-sort-down"></i></a>
   </div>
   <div class="new_todo" ng-form="newTodoForm">

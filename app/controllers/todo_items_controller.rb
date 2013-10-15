@@ -11,9 +11,11 @@ class TodoItemsController < ApplicationController
 
   def create
     max_index = current_user.todo_items.maximum(:item_index) || 0
+
+    due_at = params[:due_at] ? Time.iso8601(params[:due_at]) : nil
     todo = current_user.todo_items.create title: params[:title], 
       description: params[:description], 
-      due_at: Time.iso8601(params[:due_at]), 
+      due_at: due_at, 
       item_index: max_index + 1
     respond_to do |format|
       format.json { render json: todo }

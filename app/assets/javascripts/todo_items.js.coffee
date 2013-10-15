@@ -15,8 +15,11 @@ class window.TodoItemsController
       TodoItem.create({}, {
         title: $scope.newTodoTitle, 
         description: $scope.newTodoDescription, 
-        due_date: $scope.newTodoDueDate
+        due_at: $scope.newTodoDueAt
       }, ->
+        $scope.newTodoDescription = null
+        $scope.newTodoTitle = null
+        $scope.newTodoDueAt = null
         $scope.reload()
       )
 

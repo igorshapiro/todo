@@ -3,7 +3,7 @@
     <a href="#" eat-click ng-click="moveUp(todo)"><i class="icon-sort-up"></i></a>
 
     <a href="#" eat-click ng-click="toggleDone(todo)"><i ng-class="{'icon-check-empty': todo.done_at == null, 'icon-check': todo.done_at != null}"></i></a>
-    {{todo.title}}
+    {{todo.title}} (due date: {{todo.due_at}})
     <a href="#" eat-click ng-click="moveDown(todo)"><i class="icon-sort-down"></i></a>
   </div>
   <div class="new_todo" ng-form="newTodoForm">
@@ -13,6 +13,9 @@
     </div>
     <div ng-show="newTodoTitle">
       <textarea ng-model="newTodoDescription" placeholder="Description"></textarea>
+      <div>
+        <input type="text" ng-model="newTodoDueAt" datepicker-popup="dd-MMMM-yyyy" placeholder="Due date"/>
+      </div>
       <div>
         <button type="submit" class="btn btn-primary" ng-click="addTodo()" ng-disabled="newTodoForm.$invalid">Add</button>
       </div>

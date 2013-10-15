@@ -25,4 +25,5 @@ class TodoItem < ActiveRecord::Base
   def mark_done
     update_column(:done_at, Time.now)
   end
+
 end

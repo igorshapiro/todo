@@ -7,7 +7,7 @@ class window.TodoItemsController
     $scope.moveUp = (todo) -> todo.$moveUp({id: todo.id}, -> $scope.reload())
 
     $scope.addTodo = ->
-      TodoItem.create({
+      TodoItem.create({}, {
         title: $scope.newTodoTitle, 
         description: $scope.newTodoDescription, 
         due_date: $scope.newTodoDueDate

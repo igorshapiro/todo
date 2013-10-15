@@ -4,10 +4,16 @@
     {{todo.title}}
     <a href="#" eat-click ng-click="moveDown(todo)"><i class="icon-sort-down"></i></a>
   </div>
-  <div class="new_todo">
-    <form>
-      <input type="text" ng-model="newTodoTitle">
-      <button type="submit" class="btn btn-primary" ng-click="addTodo()">Add</button>
-    </form>
+  <div class="new_todo" ng-form="newTodoForm">
+    <h3>Add new todo</h3>
+    <div>
+      <input type="text" ng-model="newTodoTitle" required placeholder="Todo title">
+    </div>
+    <div ng-show="newTodoTitle">
+      <textarea ng-model="newTodoDescription" placeholder="Description"></textarea>
+      <div>
+        <button type="submit" class="btn btn-primary" ng-click="addTodo()" ng-disabled="newTodoForm.$invalid">Add</button>
+      </div>
+    </div>
   </div>
 </div>

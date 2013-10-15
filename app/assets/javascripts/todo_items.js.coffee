@@ -1,6 +1,10 @@
 class window.TodoItemsController
   constructor: ($scope, TodoItem) ->
-    $scope.todos = TodoItem.query()
+    $scope.reload = -> $scope.todos = TodoItem.query()
+    $scope.reload()
+
+    $scope.moveDown = (todo) -> todo.$moveDown({id: todo.id}, -> $scope.reload())
+    $scope.moveUp = (todo) -> todo.$moveUp({id: todo.id}, -> $scope.reload())
 
     $scope.addTodo = ->
       TodoItem.create({
@@ -8,7 +12,7 @@ class window.TodoItemsController
         description: $scope.newTodoDescription, 
         due_date: $scope.newTodoDueDate
       }, ->
-        $scope.todos = TodoItem.query()
+        $scope.reload()
       )
 
 window.TodoItemsController.$inject =  ['$scope', 'TodoItem']

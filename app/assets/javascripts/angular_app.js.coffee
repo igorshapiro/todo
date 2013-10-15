@@ -1,12 +1,14 @@
 angular.module('cellroxServices', ['ngResource'])
   .factory('Session', ['$resource', ($resource) ->
-    $resource('/sessions', {ajax: 1}, {
+    $resource('/sessions/:id', {ajax: 1}, {
       create: {method: 'POST', isArray: false}
     })
   ])
   .factory('TodoItem', ['$resource', ($resource) ->
-    $resource('/todo_items', {ajax: 1}, {
-      create: {method: 'POST', isArray: false}
+    $resource('/todo_items/:id', {ajax: 1}, {
+      create: {method: 'POST', isArray: false},
+      moveUp: {method: 'PUT', params: {move: 'up'}, isArray: false},
+      moveDown: {method: 'PUT', params: {move: 'down'}, isArray: false},
     })
   ])
 

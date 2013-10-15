@@ -12,4 +12,8 @@ module ApplicationHelper
     # In production code a salt should be included in the cookie
     cookies.signed[:session] = user.id
   end
+
+  def sign_out
+    cookies.signed[:session] = nil
+  end
 end

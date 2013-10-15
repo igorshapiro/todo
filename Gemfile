@@ -56,5 +56,5 @@ group :test do
 end
 gem 'pry'
 gem "google-code-prettify-rails"
-
+gem "font-awesome-sass-rails"
 gem 'rails_12factor', group: :production

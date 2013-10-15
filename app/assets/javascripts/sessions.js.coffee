@@ -5,5 +5,9 @@ class window.SessionsController
         (data) ->
           window.location = "/todo_items"
       )
+    $scope.logOut = ->
+      Session.delete({id: 'current'},
+        window.location = "/"
+      )
 
 window.SessionsController.$inject = ['$scope', 'Session']

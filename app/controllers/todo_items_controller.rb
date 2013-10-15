@@ -19,4 +19,14 @@ class TodoItemsController < ApplicationController
       format.json { render json: todo }
     end
   end
+
+  def update
+    todo = current_user.todo_items.find(params[:id])
+    if params[:move] == 'up'
+      todo.move_up
+    elsif params[:move] == 'down'
+      todo.move_down
+    end
+    render json: {success: true}
+  end
 end

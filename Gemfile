@@ -56,3 +56,5 @@ group :test do
 end
 gem 'pry'
 gem "google-code-prettify-rails"
+
+gem 'rails_12factor', group: :production

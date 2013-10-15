@@ -5,6 +5,7 @@ class CreateTodoItems < ActiveRecord::Migration
       t.string :title
       t.string :description
       t.datetime :due_at
+      t.integer :order
 
       t.timestamps
     end

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20131015145423) do
     t.string   "title"
     t.string   "description"
     t.datetime "due_at"
+    t.integer  "order"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

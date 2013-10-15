@@ -1,6 +1,6 @@
 class TodoItemsController < ApplicationController
   def index
-    todos = current_user.todo_items.order('"order"')
+    todos = current_user.todo_items.order(:item_index)
     respond_to do |format|
       format.html
       format.json {

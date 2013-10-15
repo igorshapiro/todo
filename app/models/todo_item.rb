@@ -1,21 +1,21 @@
 class TodoItem < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :description, :due_at, :title, :order, :done_at
+  attr_accessible :description, :due_at, :title, :item_index, :done_at
 
   def move_up
-    prev_todo = user.todo_items.where(order: order - 1).first
+    prev_todo = user.todo_items.where(item_index: item_index - 1).first
     return unless prev_todo
 
-    prev_todo.update_column(:order, order)
-    update_column(:order, order - 1)
+    prev_todo.update_column(:item_index, item_index)
+    update_column(:item_index, item_index - 1)
   end
 
   def move_down
-    next_todo = user.todo_items.where(order: order + 1).first
+    next_todo = user.todo_items.where(item_index: item_index + 1).first
     return unless next_todo
 
-    next_todo.update_column(:order, order)
-    update_column(:order, order + 1)
+    next_todo.update_column(:item_index, item_index)
+    update_column(:item_index, item_index + 1)
   end
 
   def mark_undone

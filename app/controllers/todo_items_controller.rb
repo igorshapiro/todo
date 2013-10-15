@@ -10,11 +10,11 @@ class TodoItemsController < ApplicationController
   end
 
   def create
-    max_order = current_user.todo_items.maximum(:order) || 0
+    max_index = current_user.todo_items.maximum(:item_index) || 0
     todo = current_user.todo_items.create title: params[:title], 
       description: params[:description], 
       due_at: params[:due_at], 
-      order: max_order + 1
+      item_index: max_index + 1
     respond_to do |format|
       format.json { render json: todo }
     end

@@ -5,6 +5,11 @@ class window.TodoItemsController
 
     $scope.moveDown = (todo) -> todo.$moveDown({id: todo.id}, -> $scope.reload())
     $scope.moveUp = (todo) -> todo.$moveUp({id: todo.id}, -> $scope.reload())
+    $scope.toggleDone = (todo) -> 
+      if todo.done_at
+        todo.$markUndone({id: todo.id}, -> $scope.reload())
+      else
+        todo.$markDone({id: todo.id}, -> $scope.reload())
 
     $scope.addTodo = ->
       TodoItem.create({}, {

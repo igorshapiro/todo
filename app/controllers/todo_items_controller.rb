@@ -27,6 +27,10 @@ class TodoItemsController < ApplicationController
     elsif params[:move] == 'down'
       todo.move_down
     end
+
+    todo.mark_done if params[:done]
+    todo.mark_undone if params[:undone]
+
     render json: {success: true}
   end
 end

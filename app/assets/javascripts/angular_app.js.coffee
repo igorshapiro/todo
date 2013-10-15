@@ -9,6 +9,8 @@ angular.module('cellroxServices', ['ngResource'])
       create: {method: 'POST', isArray: false},
       moveUp: {method: 'PUT', params: {move: 'up'}, isArray: false},
       moveDown: {method: 'PUT', params: {move: 'down'}, isArray: false},
+      markDone: {method: 'PUT', params: {done: 'true'}, isArray: false},
+      markUndone: {method: 'PUT', params: {undone: 'true'}, isArray: false}
     })
   ])
 

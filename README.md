@@ -4,9 +4,10 @@
 
 - Rails 3.2
 - Bootstrap
-- AngularJS
-- Angular UI / Bootstrap
+- AngularJS / CoffeeScript
+- Angular UI / Bootstrap / SASS
 - PostgreSQL
+- RSpec/Turnip
 
 ## Tests
 Turnip is used for acceptance tests

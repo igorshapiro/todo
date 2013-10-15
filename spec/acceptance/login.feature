@@ -1,17 +1,16 @@
 Feature: login
-  @javascript:
+  @javascript
   Scenario: Non existing user signs-in
-    Given I visit "/sessions" page
-    When I enter my email address 
+    Given I'm a visitor without an account
+    When I enter my email in email field
     And I click "Let me in"
-    Then I become a user
-    And I should see "/todo_items" page
+    Then I should see "My TODO List" text
+    And I should have an account
 
-  @javascript:
+  @javascript
   Scenario: Existing user signs-in
-    Given I'm an existing user
-    When I visit "/sessions" page
-    And I enter my email address
-    And I click "let me in"
-    Then I should see "/todo_items"
+    Given I'm a visitor with an account
+    When I enter my email in email field
+    And I click "Let me in"
+    Then I should see "My TODO List" text
     And I should see all my todos

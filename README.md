@@ -8,6 +8,16 @@
 - Angular UI / Bootstrap
 - PostgreSQL
 
+## Tests
+Turnip is used for acceptance tests
+
+Acceptance tests are written for:
+- Existing user login
+- New visitor sign up
+- Todo list shows all todo items of a user
+
+They can be found at /spec/acceptance
+
 ## Sign-up/in assumptions
 Sign-in and sign-up functionality is combined. If the user logs in with an email that doesn't exist, 
 a new user is created and immediately logged in.

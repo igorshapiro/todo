@@ -1,1 +1,5 @@
 <%= link_to "Cellrox", root_path, :class => 'brand' %>
+
+<% if current_user.nil? %>
+  <%= link_to "Sign in", root_path %>
+<%end%>

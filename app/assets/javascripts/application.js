@@ -11,6 +11,11 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
 //= require bootstrap
-//= require_tree .
+//= require unstable/angular
+//= require unstable/angular-resource
+//= require angular-ui-bootstrap
+
+//= require angular_app
+//= require sessions
+//= require todo_items

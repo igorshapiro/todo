@@ -12,6 +12,6 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
-    render json: 'success'
+    render json: {success: true}
   end
 end
